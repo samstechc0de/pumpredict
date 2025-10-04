@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Pumpredict Overlay",
+  "version": "1.0",
+  "description": "Overlay prediction markets on Pump.fun",
+  "permissions": ["storage", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://pump.fun/coin/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Pumpredict"
+  }
+}
